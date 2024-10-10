@@ -36,6 +36,22 @@ create table inpost (                                                           
   inpost_date timestamp default now() not null,                                    -- дата реакции 
   inpostout_id int8 default 'no' not null);                                        -- ответ на пост (репост)
 
+-- из "бобра" экспортнул данные для теста под каждую строку свой инсерт 
+ -- вставка тестовых данных
+INSERT INTO sapu.users (users_fio,users_login,users_rgdate,users_gr,users_mr,users_adress_id) VALUES ('Шакал Василь Джонович','Джон','2024-10-01 00:00:00.000','1935-03-25 00:00:00.000','Тунгуска',2);
+INSERT INTO sapu.users (users_fio,users_login,users_rgdate,users_gr,users_mr,users_adress_id) VALUES ('Иванов Иван Попович','Поп','2024-10-09 14:53:16.590',NULL,NULL,NULL);
+INSERT INTO sapu.users (users_fio,users_login,users_rgdate,users_gr,users_mr,users_adress_id) VALUES ('Веселов Ирраклий Борзанович','Борзый','2024-01-09 14:23:29.629','1994-05-03 00:00:00.000','Шаинск',1);
+--INSERT INTO sapu.users (users_fio,users_login,users_rgdate,users_gr,users_mr,users_adress_id) VALUES ('Забавный Пётр Сергеевич',' Забава','2024-04-23 00:00:00.000','1999-01-01 00:00:00.000','Bonn',3); -- этого пользоателя импортил через copy из users.txt , созданный а notepad 
+ --вставка тестовых данных
+INSERT INTO sapu.outpost (outpost_text,users_id,snet_id,outpost_date) VALUES ('регуляр регулярный регулировал регулярки',2,1,'2024-10-09 14:29:37.282');
+INSERT INTO sapu.outpost (outpost_text,users_id,snet_id,outpost_date) VALUES ('регулярно регулировщик читал нам стихи на регулируемом перекрётске',1,1,'2024-10-09 14:29:37.280');
+INSERT INTO sapu.outpost (outpost_text,users_id,snet_id,outpost_date) VALUES ('приём пищи регулярно , не даст вам умереть от истощения',2,1,'2024-10-06 00:00:00.000');
+INSERT INTO sapu.outpost (outpost_text,users_id,snet_id,outpost_date) VALUES ('Ругулярка встала поперёк запроса урегулирования',2,1,'2024-10-05 00:00:00.000');
+INSERT INTO sapu.outpost (outpost_text,users_id,snet_id,outpost_date) VALUES ('Регулярка решает всё, будт как всё',1,1,'2024-10-04 00:00:00.000');
+INSERT INTO sapu.outpost (outpost_text,users_id,snet_id,outpost_date) VALUES ('Было время, был я беден, а теперь никак',1,1,'2024-10-03 00:00:00.000');
+INSERT INTO sapu.outpost (outpost_text,users_id,snet_id,outpost_date) VALUES ('Регулярный обход здания регулярно поражал нас всех',1,1,'2024-10-03 00:00:00.000');
+
+
 
 --1.
 -- во скольких постах у каких пользователей стречается слово, частью которого является РЕГУЛЯР%
