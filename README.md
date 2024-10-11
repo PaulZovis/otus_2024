@@ -161,6 +161,15 @@ delete
   from outpost oup
  where oup.outpost_date < '2024-09-01'::timestamp
    returning outpost_date, users_id, outpost_text;
+-- удаление повторных постов по пользователю, тексту и идентификатору соц.сети
+DELETE 
+  from outpost oup
+  USING (SELECT outpost_text,users_id, snet_id, max(ctid) sctid FROM outpost GROUP BY 1,2,3) dd
+ where oup.outpost_text = dd.outpost_text
+   AND oup.users_id = dd.users_id
+   AND oup.snet_id = dd.snet_id
+   AND oup.ctid <> dd.sctid
+   returning oup.users_id, oup.outpost_text, outpost_date; 
    
 --6.
 -- имеем выгруженный в *.* файл с данными по *, где поля совпадают (в частном случае или не совпадают, но тогда просто создадим временную таблицу с количеством полей совпадающим с файлом *.*)
