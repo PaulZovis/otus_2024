@@ -161,7 +161,7 @@ delete
   from outpost oup
  where oup.outpost_date < '2024-09-01'::timestamp
    returning outpost_date, users_id, outpost_text;
--- удаление повторных постов по пользователю, тексту и идентификатору соц.сети
+-- удаление повторных постов по пользователю, тексту и идентификатору соц.сети (изменил форматирование в dbeaver под заглавные буквы с лужебных словах, поэтому отличается от предыдущих вариантов)
 DELETE 
   from outpost oup
   USING (SELECT outpost_text,users_id, snet_id, max(ctid) sctid FROM outpost GROUP BY 1,2,3) dd
