@@ -1,9 +1,11 @@
--- DML: вставка, обновление, удаление, выборка данных в PostgreSQL \      -- создание последовательности    
+-- DML: вставка, обновление, удаление, выборка данных в PostgreSQL 
+-- создание последовательности    
 -- что-то пока не разобрался с форматированием,  а дата сдачи оказалась не по готовности ,  а до 10.10.2024 (надеюсь включительно)
 
 
 -- простенький вариант, схему не создаю, но в оригинале создал схемку под данное ДЗ
 -- создадим табицы для выполнения дом.задания
+
 create sequence seq_outpost_id start 1;                                              -- создание последовательности для идентификатора
 create table outpost (                                                               -- таблица постов пользователя
   outpost_id int8 default nextval('seq_outpost_id'::regclass) not null primary key,  -- идентификатор
@@ -38,11 +40,15 @@ create table inpost (                                                           
 
 -- из "бобра" экспортнул данные для теста под каждую строку свой инсерт 
  -- вставка тестовых данных
+ 
 INSERT INTO sapu.users (users_fio,users_login,users_rgdate,users_gr,users_mr,users_adress_id) VALUES ('Шакал Василь Джонович','Джон','2024-10-01 00:00:00.000','1935-03-25 00:00:00.000','Тунгуска',2);
 INSERT INTO sapu.users (users_fio,users_login,users_rgdate,users_gr,users_mr,users_adress_id) VALUES ('Иванов Иван Попович','Поп','2024-10-09 14:53:16.590',NULL,NULL,NULL);
 INSERT INTO sapu.users (users_fio,users_login,users_rgdate,users_gr,users_mr,users_adress_id) VALUES ('Веселов Ирраклий Борзанович','Борзый','2024-01-09 14:23:29.629','1994-05-03 00:00:00.000','Шаинск',1);
+
+
 --INSERT INTO sapu.users (users_fio,users_login,users_rgdate,users_gr,users_mr,users_adress_id) VALUES ('Забавный Пётр Сергеевич',' Забава','2024-04-23 00:00:00.000','1999-01-01 00:00:00.000','Bonn',3); -- этого пользоателя импортил через copy из users.txt , созданный а notepad 
  --вставка тестовых данных
+ 
 INSERT INTO sapu.outpost (outpost_text,users_id,snet_id,outpost_date) VALUES ('регуляр регулярный регулировал регулярки',2,1,'2024-10-09 14:29:37.282');
 INSERT INTO sapu.outpost (outpost_text,users_id,snet_id,outpost_date) VALUES ('регулярно регулировщик читал нам стихи на регулируемом перекрётске',1,1,'2024-10-09 14:29:37.280');
 INSERT INTO sapu.outpost (outpost_text,users_id,snet_id,outpost_date) VALUES ('приём пищи регулярно , не даст вам умереть от истощения',2,1,'2024-10-06 00:00:00.000');
