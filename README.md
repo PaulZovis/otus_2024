@@ -1,4 +1,5 @@
 # Проектирование БД 
-Схема БД
-##### ![image](https://github.com/user-attachments/assets/f8f3882f-1250-4a80-8270-a6fb598bf4ba "Схема БД")
+
+##### ![image](https://github.com/user-attachments/assets/280d6d8b-5b29-40e1-8b02-67f32dc1eda6  "Схема БД")
+ 
 
