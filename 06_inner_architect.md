@@ -1,4 +1,4 @@
-# Внутренняя архитектура СУБД PostgreSQL 
+![image](https://github.com/user-attachments/assets/7700af1f-1f9b-4f61-8926-d6b195718373)# Внутренняя архитектура СУБД PostgreSQL 
 ##### Установка через докер
 **(Всегда устанавливал под Windows разные версии ОС и PostgreSQL ранее, в рамках занятия опробовал варианты)
 > осуществил на доманей РМ, но предпочёл работу на ВМ
@@ -28,4 +28,4 @@ psql -U postgres
 create database otus_project;
 \c otus_project;
 ```
-![](![Uploading image.png…])
+![]![image](https://github.com/user-attachments/assets/05b0bc8e-2ee5-4f44-a879-6f2dad5602a9))
