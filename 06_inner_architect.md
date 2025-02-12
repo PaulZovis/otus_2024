@@ -28,8 +28,8 @@ psql -U postgres
 create database otus_project;
 \c otus_project;
 ```
-![image](https://github.com/user-attachments/assets/05b0bc8e-2ee5-4f44-a879-6f2dad5602a9))
-![image](![image](https://github.com/user-attachments/assets/374eb6b8-b57a-4277-af97-3bf0ac39d1c5))
+![image](https://github.com/user-attachments/assets/05b0bc8e-2ee5-4f44-a879-6f2dad5602a9)
+![image](https://github.com/user-attachments/assets/374eb6b8-b57a-4277-af97-3bf0ac39d1c5)
 ![image](https://github.com/user-attachments/assets/5a944175-6844-45d3-b4f6-b9abbb90d4c4)
 ![image](https://github.com/user-attachments/assets/3a0fe7ae-8222-4de4-a4bb-cc5e51d605c6)
 
