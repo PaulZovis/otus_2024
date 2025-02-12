@@ -28,3 +28,4 @@ psql -U postgres
 create database otus_project;
 \c otus_project;
 ```
+![](![Uploading image.png…])
