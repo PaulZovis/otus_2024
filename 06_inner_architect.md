@@ -35,6 +35,18 @@ create database otus_project;
 
 ![image](https://github.com/user-attachments/assets/5a944175-6844-45d3-b4f6-b9abbb90d4c4)
 
+##### Создание пользователя из-под командной строки с ограничением действия по времени
+![Screenshot 2025-02-13 112051](https://github.com/user-attachments/assets/d69d3165-3337-45f0-b59f-8a612a93ad05)
+> войдём под user_otus и создвдим таблицу ttt с полями id и ttext
+![Screenshot 2025-02-13 112334](https://github.com/user-attachments/assets/8da51624-61fe-48f6-be8c-4933137d1702)
+> Посмотрим под каким пользователем работаем
+![Screenshot 2025-02-13 112829](https://github.com/user-attachments/assets/ab3edc0a-b033-4489-9a4a-935f692ebf1a)
+
+##### Подключение через DBeaver (видим бд , созданную таблицу)
+![Screenshot 2025-02-13 113336](https://github.com/user-attachments/assets/9db8477c-b643-491f-bee4-c35de98c5475)
+
+
+
 
 
 
