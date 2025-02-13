@@ -30,11 +30,8 @@ create database otus_project;
 ```
 ##### Подключимся к БД в командной строке ОС Windows, рестартанём, остановим, запустим сервер БД
 ![image](https://github.com/user-attachments/assets/a050d8ee-bf38-4468-afb1-fc8152a3d10f)
-
+> Посмотрим , есть ли  БД, создадим БД, посмотрим
 ![image](https://github.com/user-attachments/assets/374eb6b8-b57a-4277-af97-3bf0ac39d1c5)
-
-![image](https://github.com/user-attachments/assets/5a944175-6844-45d3-b4f6-b9abbb90d4c4)
-
 ##### Создание пользователя из-под командной строки с ограничением действия по времени
 ![Screenshot 2025-02-13 112051](https://github.com/user-attachments/assets/d69d3165-3337-45f0-b59f-8a612a93ad05)
 > войдём под user_otus и создfдим таблицу ttt с полями id и ttext
