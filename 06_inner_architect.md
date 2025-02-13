@@ -28,7 +28,7 @@ psql -U postgres
 create database otus_project;
 \c otus_project;
 ```
-##### Подключимся к БД в командной строке ОС Windows
+##### Подключимся к БД в командной строке ОС Windows, рестартанём, остановим, запустим сервер БД
 ![image](https://github.com/user-attachments/assets/a050d8ee-bf38-4468-afb1-fc8152a3d10f)
 
 ![image](https://github.com/user-attachments/assets/374eb6b8-b57a-4277-af97-3bf0ac39d1c5)
