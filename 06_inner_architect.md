@@ -28,7 +28,7 @@ psql -U postgres
 create database otus_project;
 \c otus_project;
 ```
-##### Демонстрирую с РМ из под Windows на этой же ОС
+##### Подключимся к БД в командной строке ОС Windows
 ![image](https://github.com/user-attachments/assets/a050d8ee-bf38-4468-afb1-fc8152a3d10f)
 
 ![image](https://github.com/user-attachments/assets/374eb6b8-b57a-4277-af97-3bf0ac39d1c5)
@@ -37,7 +37,7 @@ create database otus_project;
 
 ##### Создание пользователя из-под командной строки с ограничением действия по времени
 ![Screenshot 2025-02-13 112051](https://github.com/user-attachments/assets/d69d3165-3337-45f0-b59f-8a612a93ad05)
-> войдём под user_otus и создвдим таблицу ttt с полями id и ttext
+> войдём под user_otus и создfдим таблицу ttt с полями id и ttext
 ![Screenshot 2025-02-13 112334](https://github.com/user-attachments/assets/8da51624-61fe-48f6-be8c-4933137d1702)
 > Посмотрим под каким пользователем работаем
 ![Screenshot 2025-02-13 112829](https://github.com/user-attachments/assets/ab3edc0a-b033-4489-9a4a-935f692ebf1a)
