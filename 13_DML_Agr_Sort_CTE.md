@@ -33,9 +33,8 @@ SELECT year_game ,
  GROUP BY 1
  ORDER BY 1;
 ```
-> Результат
+*(Результат)
 ![image](https://github.com/user-attachments/assets/5da4ceef-b6f7-44fd-84b8-151b7d64c808)
-
 > cte показывающее тоже самое
 ```
 WITH cte AS   
@@ -47,7 +46,7 @@ SELECT year_game as "год", sumpo as "сумма очков"
   FROM cte
  ORDER BY 1;
 ```
-> Результат
+*(Результат)
 ![image](https://github.com/user-attachments/assets/83cc15ba-347d-48e8-a7db-958082340c66)
 > Функция LAG вывести кол-во очков по всем игрокам за текущий код и за предыдущий.
 ```
