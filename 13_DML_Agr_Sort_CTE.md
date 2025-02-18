@@ -46,7 +46,7 @@ SELECT year_game as "год", sumpo as "сумма очков"
  ORDER BY 1;
 ```
 ![Результат](https://github.com/user-attachments/assets/83cc15ba-347d-48e8-a7db-958082340c66)
-> Функция LAG вывести кол-во очков по всем игрокам за текущий код и за предыдущий.
+> Функция LAG вывести кол-во очков по всем игрокам за текущий год и за предыдущий.
 ```
 WITH cte AS   
   (SELECT year_game , 
@@ -59,8 +59,8 @@ WITH cte AS
      FROM cte
     ORDER BY 1;
 ```
-
->
+![Результат](https://github.com/user-attachments/assets/9ce74813-c006-49f6-b37b-2f8988911966)
+> кол-во очков по всем игрокам за текущий год, предыдущий и последующий
 ```
 WITH cte AS   
   (SELECT year_game , 
@@ -74,7 +74,8 @@ WITH cte AS
      FROM cte
     ORDER BY 1;
 ```
->
+![image](https://github.com/user-attachments/assets/52d4a227-bbdf-4931-aa6f-e59336a256ad)
+> Группируем очки по игроку, по году, итог и Итог по всем 
 ```
 SELECT player_name , 
        year_game, 
@@ -83,6 +84,10 @@ SELECT player_name ,
   GROUP BY ROLLUP(1,2)
   ORDER BY 1,2
 ```
+![image](https://github.com/user-attachments/assets/ef9ed686-f492-4d75-8e85-9e0e93539b1e)
+> если развернуть порядок группировки и сортировки на по году, игроку, то
+![image](https://github.com/user-attachments/assets/8c7e5d00-7e35-49d0-b30e-daca9ed9bd87)
+
 > 
 ```
   SELECT player_name , 
