@@ -86,9 +86,17 @@ SELECT player_name ,
 ```
 ![image](https://github.com/user-attachments/assets/ef9ed686-f492-4d75-8e85-9e0e93539b1e)
 > если развернуть порядок группировки и сортировки на по году, игроку, то
+```
+SELECT player_name , 
+       year_game, 
+       sum(points) AS sumpo
+  FROM STATISTIC
+  GROUP BY ROLLUP(2,1)
+  ORDER BY 2,1
+```
 ![image](https://github.com/user-attachments/assets/8c7e5d00-7e35-49d0-b30e-daca9ed9bd87)
 
-> 
+> С подитогами
 ```
   SELECT player_name , 
        year_game, 
@@ -97,3 +105,4 @@ SELECT player_name ,
   GROUP BY cube(1,2)
   ORDER BY 1,2
 ```
+![image](https://github.com/user-attachments/assets/b32b9c6c-0a5a-4296-a8f4-ca6975983234)
