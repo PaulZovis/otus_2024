@@ -40,3 +40,4 @@ ALTER TABLE dct_log ADD COLUMN log_preferences JSON;
 > В поле `log_preferences` можно складывать  информацию, не предусмотренную основными полями таблицы, более расширенные логи
 
 ![image](https://github.com/user-attachments/assets/f0b5f145-7861-422c-8ebc-459b1213bfd7)
+![image](https://github.com/user-attachments/assets/c2af9197-eae4-44fd-bbd0-d8d3f2b8fdf2)
