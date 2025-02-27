@@ -127,6 +127,7 @@ CREATE SUBSCRIPTION logical_sub
 CONNECTION 'host=postgres-master port=5432 dbname=logical_db user=postgres password=password'
 PUBLICATION logical_pub;
 ```
+**Тоже неудачка**
 > Скрины работы
 ![rep1](https://github.com/user-attachments/assets/6e302328-ec2f-40e7-875c-1cd5b50d2cfa)
 ![rep2](https://github.com/user-attachments/assets/da613044-d645-4c1c-be64-ef7246c5ce48)
