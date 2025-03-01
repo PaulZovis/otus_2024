@@ -93,5 +93,14 @@ CALL create_user_inpost('ABRAMUS','test texta2',2);
 ![tr6](https://github.com/user-attachments/assets/800f3061-0d54-4238-9d25-7aee5e48b2fc)
 ![tr7](https://github.com/user-attachments/assets/43c5d85c-4b92-4e4c-810d-4937337d3422)
 
-
-
+### import file
+> создам файл
+```
+CREATE TABLE logins(login varchar(200) primary KEY, city varchar(200));
+```
+> загружу
+```
+LOAD DATA INFILE '~/otus-mysql-docker/users-39289-fba2c6.csv'
+INTO TABLE logins
+FIELDS TERMINATED BY ','
+```
