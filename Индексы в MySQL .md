@@ -89,5 +89,6 @@ ALTER TABLE dct_source ADD FULLTEXT(post_desc); --возможен полнот�
 CREATE UNIQUE INDEX users_user_login_IDX USING HASH ON otus.users (user_login); -- поиск по равенству логина, тут мысль мелькнула , а не заменить ли user_id на user_login, но стоит опробовать на данных
 ```
 > Пример
+> При построении индексов видим построение плана с учётом индекса
 ![in1](https://github.com/user-attachments/assets/10146086-5266-47eb-91b7-8dc9d8406b7a)
 ![in2](https://github.com/user-attachments/assets/5bc22a90-8e25-449b-b2dd-1fa424fa9f73)
