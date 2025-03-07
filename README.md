@@ -1,6 +1,7 @@
 # Хранимые-процедуры-и-триггеры-в-MySQL
+
 > Создание пользователя client
-``
+```
 CREATE USER 'client'@'localhost' IDENTIFIED BY 'client_password';
 ```
 >  Создание пользователя manager
