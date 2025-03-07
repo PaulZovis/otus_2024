@@ -64,10 +64,10 @@ END;
 ```
 > Тестируем 
 ```
-CALL get_filtered_posts_more(0,0,'','NONE','1,2,3','ASC',2);
+CALL get_filtered_posts_more(2,12,'test','ABRAMUS','1,2,3','ASC',2);
 CALL get_filtered_posts(3,15,'test','NONE',3);
 ```
-
+![image](https://github.com/user-attachments/assets/fbb70e76-0401-4f91-8725-5f1e8ea76f33)
 > Процедура отчета по постам
 > Эта процедура позволяет просматривать отчет по постам за определенный период с группировкой по длине текста, source_id или пользователю.
 ```
@@ -111,6 +111,7 @@ END;
 ```
 CALL get_posts('year', 'user_id');
 ```
+![image](https://github.com/user-attachments/assets/192679aa-14ea-4b57-bb85-d1a4870fb390)
 > Даем права на выполнение процедуры get_filtered_posts
 ```
 GRANT EXECUTE ON PROCEDURE otus.get_filtered_posts TO 'client'@'localhost';
@@ -132,8 +133,12 @@ BEGIN
     VALUES (NOW(), 'INFO', CONCAT('User ', NEW.user_id, ' created a new post with ID ', NEW.inpost_id));
 END;
 ```
->
+> тестируем
 ```
 SELECT * FROM dct_log;
-CALL create_user_inpost('TEST2','Со мною вот , что происходит, ко мне на сайт никто не ходят, а ходят в праздной тишине всё баги разные не те',2);
 ```
+![image](https://github.com/user-attachments/assets/aa3cedc5-fece-4601-a262-257f1c8d36af)
+```
+CALL create_user_inpost('TEST3','Со мною вот, что происходит, ко мне на сайт никто не ходят, а ходят в праздной тишине всё баги разные не те',1);
+```
+![image](https://github.com/user-attachments/assets/2b0beb40-e4bd-4096-88bf-d47b29345f32)
