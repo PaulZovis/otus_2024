@@ -8,6 +8,8 @@ CREATE USER 'client'@'localhost' IDENTIFIED BY 'client_password';
 ```
 CREATE USER 'manager'@'localhost' IDENTIFIED BY 'manager_password';
 ```
+![image](https://github.com/user-attachments/assets/2ce1c075-54a8-466f-aa45-e6797d22dca5)
+
 > Процедура выборки постов
 > Эта процедура позволяет фильтровать посты по длине текста, наличию определённых слов (полный текстовый поиск), пользователю, а также поддерживает сортировку и постраничную выдачу.
 ```
@@ -49,11 +51,11 @@ BEGIN
      INNER JOIN post AS p using(post_id)
       LEFT JOIN users AS u using(user_id)
         WHERE 1=1
-          AND ', IF(p_min_len != 0, ' p.post_len >= '||p_min_len, '1=1'),
-        ' AND ', IF(p_max_len != 0, ' p.post_len <= '||p_max_len, '1=1'),
-        ' AND ', IF(p_login != 'NONE', ' u.user_login = '||p_login, '1=1'),
-        ' AND ', IF(p_words !=  'NONE' OR p_words !=  '', ' MATCH(post_text) AGAINST('||quote(p_words)||' IN NATURAL LANGUAGE MODE) ', '1 = 1'),
-      ' ORDER BY ', IF(p_field !=  'NONE' OR p_field !=  '', p_field, ''), ' ',p_sort,        
+          AND ', IF(p_min_len != 0, concat(' p.post_len >= ',p_min_len), '1=1'),
+        ' AND ', IF(p_max_len != 0, concat(' p.post_len <= ',p_max_len), '1=1'),
+        ' AND ', IF(p_login != 'NONE', concat(' u.user_login = ',QUOTE(p_login)), '1=1'),
+        ' AND ', IF(p_words != 'NONE' OR p_words !=  '', concat(' MATCH(post_text) AGAINST(',QUOTE(p_words),' IN NATURAL LANGUAGE MODE) '), '1=1'),
+      ' ORDER BY ', IF(p_field != 'NONE' OR p_field !=  '', p_field, ''), ' ',p_sort,        
         ' LIMIT ', p_limit);
     PREPARE stmt FROM @query;
     EXECUTE stmt;
@@ -65,6 +67,7 @@ END;
 CALL get_filtered_posts_more(0,0,'','NONE','1,2,3','ASC',2);
 CALL get_filtered_posts(3,15,'test','NONE',3);
 ```
+
 > Процедура отчета по постам
 > Эта процедура позволяет просматривать отчет по постам за определенный период с группировкой по длине текста, source_id или пользователю.
 ```
