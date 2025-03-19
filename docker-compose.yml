@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  patroni1:
+    image: registry.opensource.zalan.do/acid/spilo-14:2.1-p7
+    container_name: patroni1
+    environment:
+      PATRONI_NAME: patroni1
+      PATRONI_POSTGRESQL_DATA_DIR: /var/lib/postgresql/data/pgdata
+      PATRONI_POSTGRESQL_PGPASS: /tmp/pgpass
+      PATRONI_REPLICATION_USERNAME: replicator
+      PATRONI_REPLICATION_PASSWORD: replicator_password
+      PATRONI_SUPERUSER_USERNAME: postgres
+      PATRONI_SUPERUSER_PASSWORD: postgres_password
+      PATRONI_POSTGRESQL_LISTEN: 0.0.0.0:5432
+      PATRONI_DCS_ETCD_HOST: etcd:2379 # Добавлена переменная для Etcd
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./patroni1/data:/var/lib/postgresql/data/pgdata
+      - ./patroni1/patroni.yml:/etc/patroni.yml # Монтируем конфигурационный файл
+    networks:
+      - patroni_network
+
+  patroni2:
+    image: registry.opensource.zalan.do/acid/spilo-14:2.1-p7
+    container_name: patroni2
+    environment:
+      PATRONI_NAME: patroni2
+      PATRONI_POSTGRESQL_DATA_DIR: /var/lib/postgresql/data/pgdata
+      PATRONI_POSTGRESQL_PGPASS: /tmp/pgpass
+      PATRONI_REPLICATION_USERNAME: replicator
+      PATRONI_REPLICATION_PASSWORD: replicator_password
+      PATRONI_SUPERUSER_USERNAME: postgres
+      PATRONI_SUPERUSER_PASSWORD: postgres_password
+      PATRONI_POSTGRESQL_LISTEN: 0.0.0.0:5432
+      PATRONI_DCS_ETCD_HOST: etcd:2379 # Добавлена переменная для Etcd
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./patroni2/data:/var/lib/postgresql/data/pgdata
+      - ./patroni2/patroni.yml:/etc/patroni.yml # Монтируем конфигурационный файл
+    networks:
+      - patroni_network
+
+  etcd:
+    image: bitnami/etcd:latest
+    container_name: etcd
+    environment:
+      ALLOW_NONE_AUTHENTICATION: "yes" # Разрешаем анонимную аутентификацию для Etcd
+    ports:
+      - "2379:2379"
+    networks:
+      - patroni_network
+
+networks:
+  patroni_network:
+    driver: bridge
