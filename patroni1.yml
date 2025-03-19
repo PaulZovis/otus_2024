@@ -1,0 +1,22 @@
+scope: my_cluster
+name: patroni1
+
+restapi:
+  listen: 0.0.0.0:8008
+  connect_address: patroni1:8008
+
+etcd:
+  host: etcd:2379
+
+postgresql:
+  name: patroni1
+  scope: my_cluster
+  listen: 0.0.0.0:5432
+  connect_address: patroni1:5432
+  data_dir: /var/lib/postgresql/data/pgdata
+  pg_hba:
+    - host replication replicator 0.0.0.0/0 md5
+    - host all all 0.0.0.0/0 md5
+  parameters:
+    max_connections: 100
+    shared_buffers: 1GB
